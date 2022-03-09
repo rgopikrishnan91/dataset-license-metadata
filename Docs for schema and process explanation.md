@@ -16,7 +16,7 @@ In the remainder of this document, we explain both phases and the steps and sub-
 
 
 
-![](media/image1.png){width="5.208333333333333in" height="4.175926290463692in"}
+![](images/images/fig1.png){width="5.208333333333333in" height="4.175926290463692in"}
 
 
 **Phase 1: License Identification**
@@ -35,7 +35,7 @@ In this phase, an AI engineer identifies all the license details that need to be
 
 **Sub-step 2) Extract license and metadata of official source.** We then extract the license and certain metadata about the dataset by collecting the details that we outline in the provenance schema, including the contents of the license that we present below.
 
-![](media/image2.png){width="6.611111111111111in" height="2.4590277777777776in"}
+![](images/images/fig2.png){width="6.611111111111111in" height="2.4590277777777776in"}
 
 Explanation for the terms:
 
@@ -77,7 +77,7 @@ Once we extract a dataset's provenance, if the license that we extracted in the 
 
 *Running example.* While extracting CIFAR-10\'s provenance, we learn that the authors of the website that hosts the dataset and the authors of the associated publication are the same. As such, we simply collect the dataset\'s provenance details as shown above. In addition, since the license extracted in this and the previous step are consistent, we know the license that we extracted in the previous step is the dataset's license. We present the collected data provenance details here.
 
-![](media/image3.png){width="6.611111111111111in" height="2.4715277777777778in"}
+![](images/images/fig3.png){width="6.611111111111111in" height="2.4715277777777778in"}
 
 **Step 3 Lineage extraction**
 
@@ -127,7 +127,7 @@ In order to ensure that the extracted rights and obligations are documented in a
 
 We call our modified MDL documentation schema the Enhanced MDL. We provide the schema and a description of each field in our schema below.
 
-![](media/image5.png){width="6.611111111111111in" height="4.711805555555555in"}
+![](images/images/fig5.png){width="6.611111111111111in" height="4.711805555555555in"}
 
 > **Dataset/data source name**: Name of the dataset/data source under consideration **Dataset version**: Which particular version the information pertains to, if applicable **Licensor**: The owner of the dataset/data source who assigned the license
 
@@ -187,7 +187,7 @@ In this step, we provide a Enhanced MDL decomposition for the dataset under cons
 
 *Running example.* The main results of our decomposition can be given as follows. The fields marked in blue represent our enhancement. In summary, a user has rights to access the CIFAR-10 data for every use case outlined in the schema. To do so, the user is required to cite the associated technical report, as requested on the official dataset website.
 
-![](media/image6.png){width="6.611111111111111in" height="4.686805555555556in"}
+![](images/images/fig6.png){width="6.611111111111111in" height="4.686805555555556in"}
 
 **Optional sub-step Documentation and schema update.** In the event that one needs to ascertain if a new usage scenario other than the ones that are dictated by the rights that our enhanced MDL schema captures, then they should enhance our schema. They can do so by adding a column to capture the rights and obligations that would pertain to their usage scenario. If they think the additional schema can be universally useful, we encourage them to submit a pull request.
 
