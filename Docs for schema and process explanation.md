@@ -16,7 +16,7 @@ In the remainder of this document, we explain both phases and the steps and sub-
 
 
 
-![](images/images/fig1.png){width="5.208333333333333in" height="4.175926290463692in"}
+![](images/images/fig1.png)
 
 
 **Phase 1: License Identification**
@@ -35,17 +35,17 @@ In this phase, an AI engineer identifies all the license details that need to be
 
 **Sub-step 2) Extract license and metadata of official source.** We then extract the license and certain metadata about the dataset by collecting the details that we outline in the provenance schema, including the contents of the license that we present below.
 
-![](images/images/fig2.png){width="6.611111111111111in" height="2.4590277777777776in"}
+![](images/images/fig2.png)
 
 Explanation for the terms:
 
-> **Dataset name**: Name of the dataset under consideration
+ **Dataset name**: Name of the dataset under consideration
 
 **Dataset version**: Which particular version the information pertains to, if applicable **Origin date**: The time when a dataset first came about, e.g., the time of publication of CIFAR-10\'s technical report
 
 **Origin**: The place where a dataset first came about, e.g., CIFAR-10\'s official website
 
-> **Description of dataset**: Brief overview given by the creators of the dataset, e.g., \"The
+ **Description of dataset**: Brief overview given by the creators of the dataset, e.g., \"The
 
 CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.\"
 
@@ -53,15 +53,15 @@ CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 
 
 **Downloaded outlet**: If the dataset was downloaded from a different outlet than origin, we record the location
 
-> **Is outlet licensed?**: Whether the downloaded outlet is licensed
->
-> **Is the dataset publicly available?**: Whether the dataset is available to the public or is behind a paywall
+**Is outlet licensed?**: Whether the downloaded outlet is licensed
+
+ **Is the dataset publicly available?**: Whether the dataset is available to the public or is behind a paywall
 
 **Where license was found**: Short description of where license was found, e.g., on official website, with the downloaded dataset, etc.
 
-> **License location**: URL or relative path of the license
->
-> **License content**: Record the contents of the license
+**License location**: URL or relative path of the license
+
+**License content**: Record the contents of the license
 
 **Hash code**: Any hash code(s) supplied by the dataset creators
 
@@ -77,7 +77,7 @@ Once we extract a dataset's provenance, if the license that we extracted in the 
 
 *Running example.* While extracting CIFAR-10\'s provenance, we learn that the authors of the website that hosts the dataset and the authors of the associated publication are the same. As such, we simply collect the dataset\'s provenance details as shown above. In addition, since the license extracted in this and the previous step are consistent, we know the license that we extracted in the previous step is the dataset's license. We present the collected data provenance details here.
 
-![](images/images/fig3.png){width="6.611111111111111in" height="2.4715277777777778in"}
+![](images/images/fig3.png)
 
 **Step 3 Lineage extraction**
 
@@ -87,7 +87,7 @@ A dataset's lineage tracks the data sources from which a given dataset was creat
 
 *Running example.* We previously learned through provenance extraction that CIFAR-10 is a subset of another dataset called 80 Million Tiny Images. Reading the research paper associated with 80 Million Tiny Images, we learn that this dataset has 7 data sources: Google, Flickr, Ask, Altavista, Picsearch, Webshots and Cydral. Figure below is a visual representation of CIFAR-10's data sources.
 
-![](media/image4.png){width="6.611111111111111in" height="3.183333333333333in"}
+![](media/image4.png)
 
 **Sub-step 2 Locate official sources of data sources**. We verify information about the data sources by locating their official sources (e.g., official dataset website, search engine and so on) similar to sub-step 1 of Provenance extraction.
 
@@ -103,7 +103,7 @@ To determine the end of the license range, we use the *Origin date* field that w
 
 *Running example.* No license captures were available during the license range for CIFAR-10 and for two of its data sources (Ask and Webshots), so we simply store the earliest captures we can find. The license content of 80 Million Tiny Images and Cydral is completely unavailable, and so, we store \\textit{N/A}. For the remaining data sources, we record the earliest license captures from the correct license range and its provenance details. For each of the data source we record its provenance details similar the provenance that we show earlier. For CIFAR-10, we would record the provenance of 7 data sources. To assist with tracing the lineage for each of the data source, we record the following details too.
 
-> **Dataset/data source name**: Name of the dataset or data source under consideration
+ **Dataset/data source name**: Name of the dataset or data source under consideration
 
 **Is there another data source?**: Whether this dataset or data source has a data source **License**: Hyperlink(s) to any relevant license information (e.g., information provided on official dataset website, Terms of Use, Creative Commons, etc.)
 
@@ -127,29 +127,29 @@ In order to ensure that the extracted rights and obligations are documented in a
 
 We call our modified MDL documentation schema the Enhanced MDL. We provide the schema and a description of each field in our schema below.
 
-![](images/images/fig5.png){width="6.611111111111111in" height="4.711805555555555in"}
+![](images/images/fig5.png)
 
-> **Dataset/data source name**: Name of the dataset/data source under consideration **Dataset version**: Which particular version the information pertains to, if applicable **Licensor**: The owner of the dataset/data source who assigned the license
+**Dataset/data source name**: Name of the dataset/data source under consideration **Dataset version**: Which particular version the information pertains to, if applicable **Licensor**: The owner of the dataset/data source who assigned the license
 
 **License name**: Name of the license if it is a standard license (e.g., CC-SA); fill in "custom" otherwise
 
-> **Credit/Attribution notice**: When using the dataset if credit/attribution needs to be given, who should it be given to
->
-> **License validity period**: Records the expiry date of the license
+ **Credit/Attribution notice**: When using the dataset if credit/attribution needs to be given, who should it be given to
+
+ **License validity period**: Records the expiry date of the license
 
 **Liability/Warranty**: Records the warranty/liability specified in the license (we specify N/A if there are no warranties specified in the license)
 
 **Designated third parties**: The designated third parties that the license specifies as entities that can modify the license (N/A if none specified)
 
-> **Access rights (data):** Right to view or download the data for the purpose of evaluation **Access obligations (data)**: Obligations to fulfill when viewing or downloading the data for the purpose of evaluation
->
-> **Tagging rights (data)**: Right to add tags or labels to the data (or any portion thereof)
->
-> **Tagging obligations (data)**: Obligations to fulfill when adding tags or labels to the data (or any portion thereof)
->
-> **Distribute rights (data)**: Right to make the data (or any portion thereof) available to third parties
->
-> **Distribute obligations (data)**: Obligations to fulfill when making the data (or any portion thereof) available to third parties
+ **Access rights (data):** Right to view or download the data for the purpose of evaluation **Access obligations (data)**: Obligations to fulfill when viewing or downloading the data for the purpose of evaluation
+
+ **Tagging rights (data)**: Right to add tags or labels to the data (or any portion thereof)
+
+**Tagging obligations (data)**: Obligations to fulfill when adding tags or labels to the data (or any portion thereof)
+
+ **Distribute rights (data)**: Right to make the data (or any portion thereof) available to third parties
+
+ **Distribute obligations (data)**: Obligations to fulfill when making the data (or any portion thereof) available to third parties
 
 **Re-represent rights (data)**: Right to alter the data such that there exists an alternative version that can used in lieu of the original
 
@@ -159,11 +159,11 @@ We call our modified MDL documentation schema the Enhanced MDL. We provide the s
 
 **Benchmark obligations (data with model)**: Obligations to fulfill when using the data to assess the performance of different untrained models; the trained model, however, can only be used to demonstrate the results of the training
 
-> **Research rights (data with model)**: Right to use the data to train a model; the trained model and its output, however, are restricted to research use only
->
-> **Research obligations (data with model)**: Obligations to fulfill when using the data to train a model; the trained model and its output, however, are restricted to research use only **Publish rights (data with model)**: Right to train a model that is available to third parties for research or publication only
->
-> **Publish obligations (data with model)**: Obligations to fulfill when training a model that is available to third parties for research or publication only
+ **Research rights (data with model)**: Right to use the data to train a model; the trained model and its output, however, are restricted to research use only
+
+ **Research obligations (data with model)**: Obligations to fulfill when using the data to train a model; the trained model and its output, however, are restricted to research use only **Publish rights (data with model)**: Right to train a model that is available to third parties for research or publication only
+
+ **Publish obligations (data with model)**: Obligations to fulfill when training a model that is available to third parties for research or publication only
 
 **Internal use rights (data with model)**: Right to use the data to train a model and improve its output; however, neither the trained model nor its output can be commercialized or made available for third party use or benefit
 
@@ -173,13 +173,13 @@ We call our modified MDL documentation schema the Enhanced MDL. We provide the s
 
 **Output commercialization obligations (data with model)**: Obligations to fulfill when using the data to train a model and improve its output. The output can then be commercialized and made available for third party use or benefit; however, the trained model cannot be made available
 
-> **Model commercialization rights (data with model)**: Right to make a trained model or any product or service utilizing a trained model available to third parties. The model\'s output may or may not be available to the same third party
->
-> **Model commercialization obligations (data with model)**: Obligations to fulfill when making a trained model or any product or service utilizing a trained model available to third parties. The model\'s output may or may not be available to the same third party
->
-> **Model reverse engineer rights (data with model)**: Right to reverse engineer a trained model to reconstruct the dataset used for its training
->
-> **Model reverse engineer obligations (data with model)**: Obligations to fulfill when reverse engineering a trained model to reconstruct the dataset used for its training
+ **Model commercialization rights (data with model)**: Right to make a trained model or any product or service utilizing a trained model available to third parties. The model\'s output may or may not be available to the same third party
+
+**Model commercialization obligations (data with model)**: Obligations to fulfill when making a trained model or any product or service utilizing a trained model available to third parties. The model\'s output may or may not be available to the same third party
+
+ **Model reverse engineer rights (data with model)**: Right to reverse engineer a trained model to reconstruct the dataset used for its training
+
+ **Model reverse engineer obligations (data with model)**: Obligations to fulfill when reverse engineering a trained model to reconstruct the dataset used for its training
 
 **Additional conditions**: Records any additional conditions if specified in the license of the given dataset
 
@@ -187,7 +187,7 @@ In this step, we provide a Enhanced MDL decomposition for the dataset under cons
 
 *Running example.* The main results of our decomposition can be given as follows. The fields marked in blue represent our enhancement. In summary, a user has rights to access the CIFAR-10 data for every use case outlined in the schema. To do so, the user is required to cite the associated technical report, as requested on the official dataset website.
 
-![](images/images/fig6.png){width="6.611111111111111in" height="4.686805555555556in"}
+![](images/images/fig6.png)
 
 **Optional sub-step Documentation and schema update.** In the event that one needs to ascertain if a new usage scenario other than the ones that are dictated by the rights that our enhanced MDL schema captures, then they should enhance our schema. They can do so by adding a column to capture the rights and obligations that would pertain to their usage scenario. If they think the additional schema can be universally useful, we encourage them to submit a pull request.
 
